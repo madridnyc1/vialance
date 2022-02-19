@@ -1,0 +1,1212 @@
+
+//Color Variable
+$clr_white: #fff;
+$clr_black: #000;
+$clr_emperor: #666666;
+$clr_tundora: #444;
+$clr_selago: #F4F7FE;
+$clr_yellow: #FFC422;
+$clr_mine_shaft: #252525;
+$clr_catskill: #F9FAFC;
+$clr_gray: #888888;
+$clr_albastor: #f9f9f9;
+$clr_athens: #F3F4F6;
+$clr_amber:#FEC107;
+$clr_gallery:#EEEEEE;
+
+$clr_green:#019446;
+$clr_sand:#F5F5F5;
+$clr_mercury:#E1E1E1;
+$clr_tango:#E86121;
+$clr_pink:#FFEBED;
+$clr_sandy:#FFEDCD;
+$clr_red:#FF3838;
+$clr_panache:#F0F9F4;
+$clr_mustard:#FFE35C;
+$clr_conifar:#ACDA3C;
+$clr_off_yellow:#FEFCE5;
+
+/*---------------------------------
+          Mixins & Animation CSS
+-----------------------------------*/
+@mixin transition($time) {
+    -webkit-transition: $time;
+    transition: $time;
+}
+
+@mixin transform($tr_amt) {
+    -webkit-transform: $tr_amt;
+    -moz-transform: $tr_amt;
+    transform: $tr_amt;
+}
+
+@mixin transform-origin($trl_amt) {
+    transform-origin: $trl_amt;
+    -webkit-transform-origin: $trl_amt;
+    -moz-transform-origin: $trl_amt;
+    -ms-transform-origin: $trl_amt;
+    -o-transform-origin: $trl_amt;
+}
+
+@mixin transform-style($trm_amt) {
+    transform-style: $trm_amt;
+    -webkit-transform-style: $trm_amt;
+    -moz-transform-style: $trm_amt;
+    -ms-transform-style: $trm_amt;
+    -o-transform-style: $trm_amt;
+}
+
+%flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+}
+
+%inline_flex {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+}
+
+%flex_column_center {
+    @extend %flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+%flex_column_between {
+    @extend %flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+%flex_column_end {
+    @extend %flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+%align_center {
+    @extend %flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+}
+
+%align_start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -ms-grid-row-align: flex-start;
+    align-items: flex-start;
+}
+
+%align_end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -ms-grid-row-align: flex-end;
+    align-items: flex-end;
+}
+%flex_justify_between {
+    @extend %flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+%flex_justify_end {
+    @extend %flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+%flex_justify_start {
+    @extend %flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+%flex_start {
+    @extend %flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+%flex_start {
+    @extend %flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    -ms-grid-row-align: flex-start;
+    align-items: flex-start;
+}
+
+%flex_between {
+    @extend %flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+
+}
+
+%flex_end {
+    @extend %flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+}
+
+@media only screen and (max-width:575px) {
+    .xs-center {
+        text-align: center;
+    }
+    .xs-none {
+        display: none;
+    }
+    .container{
+        padding: 0 30px;
+    }
+    .container-fluid{
+        padding: 0 20px!important;
+    }
+    .content-wrapper{
+        margin-top:215px;
+    }
+    .section-title,
+    .content-title{
+        margin-left: -20px;
+    }
+     //Header CSS
+     .header-menu{
+        position: relative;
+        top: 8px;
+        li{
+            margin-left: 0;
+            &:last-child{
+                a{
+                    &:hover{
+                        padding-right: 8px;
+                    }
+                }
+            }
+            a{
+                font-size: 11px;
+                letter-spacing: 2px;
+                padding:8px 8px;
+            }
+        }
+        
+    }
+    .navbar-brand img{
+        height: 50px;
+        max-width: none;
+    }
+    //Hero CSS
+    .hero-wrap{
+        padding-top: 180px;
+       .container{
+           padding-bottom: 150px;
+       }
+        .hero-content{
+            .hero-img{
+                max-width: 300px;
+            }
+            .hero-img-title{
+                width: 100%;
+            }
+            .hero-circle{
+                span{
+                    width: 250px;
+                    height:  250px;
+                }
+            }
+        }
+    }
+    .scroll-link {
+        right: 60px;
+        bottom: -150px;
+    }
+    .promo-video{
+        width: 280px;
+        height: 145px;
+        bottom: 0;
+        .promo-content{
+            padding: 0 20px;
+            .promo-text{
+                width: calc(100% - 40px);
+                h4{
+                    font-size: 22px;
+                }
+                span{
+                    font-size: 14px;
+                }
+            }
+            .play-now{
+                max-width: 40px;
+            }
+        }
+    }
+    .about-wrap .about-img-wrap .about-shape .triangle-one {
+        top: 130%;
+        max-width: 300px;
+    }
+    //Newsletter CSS
+    .newsletter-wrap{
+        .newsletter-form{
+            .form-group{
+                input{
+                    width: calc(100% - 145px);
+                    height: 55px;
+                    background-color: #F6E9EA;
+                    padding: 16px 20px 16px 20px;
+                    border: none;
+                }
+                button{
+                    height: 56px;
+                    letter-spacing: 4px;
+                    font-size: 13px;
+                    padding:10px 20px;
+                }
+            }
+        }
+    }
+    //Footer CSS
+    .footer-wrap .footer-widget .footer-logo {
+        margin-right: 0;
+        max-width: 130px;
+    }
+    .footer-wrap .footer-widget .social-profile li a img {
+        max-width: 24px;
+    }
+    .footer-wrap .footer-widget .social-profile li {
+        margin: 0 20px 0 0;
+    }
+    .footer-wrap .footer-bottom .copyright-text p {
+        width: calc(100% - 100px)!important;
+        margin-right: 10px;
+    }
+    .footer-wrap .footer-bottom .copyright-text img {
+        width: 90px!important;
+    }
+    //New Responsive CSS
+    .story-header-left{
+        margin-bottom: 20px;
+    }
+    .story-title h2 {
+        letter-spacing: 2px;
+        font-size: 24px;
+    }
+    .tool_tip.one {
+        top: 15%;
+        left: 2%;
+    }
+    .tool_tip.three {
+        top: 65%;
+        left: auto;
+        right: 2%;
+    }
+    .tool_tip.one::after, .tool_tip.two::after, .tool_tip.three::after {
+        width: 270px;
+    }
+    .tool_tip.three::after {
+        left: auto;
+        right: 20px;
+    }
+    #makePublic .modal-body .modal-action button {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .nft-box .nft-tab-content .nft-item.style3 .nft-info p {
+        font-size: 12px!important;
+        letter-spacing: 4px!important;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .section-title, .content-title {
+        margin-left: -15px;
+    }
+    //Header CSS
+    .header-menu{
+        position: relative;
+        top: 12px;
+        li{
+            margin-right: 5px;
+            a{
+                font-size: 13px;
+                letter-spacing: 3px;
+            }
+        }
+    }
+    //Hero CSS
+    .hero-wrap{
+        padding-top: 180px;
+       .container{
+           padding-bottom: 150px;
+       }
+        .hero-content{
+            .hero-img{
+                max-width: 420px;
+            }
+
+            .hero-circle{
+                span{
+                    width: 320px;
+                    height:  320px;
+                }
+            }
+        }
+    }
+    .scroll-link {
+        right: 60px;
+        bottom: -150px;
+    }
+    .promo-video{
+        width: 280px;
+        height: 145px;
+        bottom: 0;
+        .promo-content{
+            padding: 0 20px;
+            .promo-text{
+                width: calc(100% - 40px);
+                h4{
+                    font-size: 22px;
+                }
+                span{
+                    font-size: 14px;
+                }
+            }
+            .play-now{
+                max-width: 40px;
+            }
+        }
+    }
+    .about-wrap .about-img-wrap .about-shape .triangle-one {
+        top: 130%;
+        max-width: 400px;
+    }
+    
+}
+
+@media only screen and (max-width: 767px) {
+    p,input,textarea {
+        font-size: 14px;
+    }
+    .btn{
+        font-size: 14px;
+    }
+    .ptb-150 {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .ptb-250 {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    .pb-250 {
+        padding-bottom: 150px;
+    }
+    .content-wrap {
+        padding-top: 50px;
+        .content-title{
+            span{
+                margin-left: 20px;
+            }
+        }
+    }
+    //FAQ CSS
+    .faq-wrap{
+        .accordion-wrap{
+            &.container{
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+        .section-title{
+            margin-bottom: 30px;
+        }
+        .accordion-item {
+            margin: 0 0 10px;
+            padding: 32px 0;
+            .accordion-header {
+                .accordion-button {
+                    padding: 0 85px 0 30px;
+                    font-size: 20px;
+                    line-height: 1.3;
+                    span {
+                        right: 30px;
+                        img {
+                            max-width: 25px;
+                        }
+                    }
+                }
+            }
+        }
+        .accordion-body {
+            margin: 25px 33px 0 30px;
+            padding: 25px 5px 0px 0;
+        }
+    }
+    //Newsletter CSS
+    .newsletter-wrap .triangle-shape-two {
+        position: absolute;
+        top: 220px;
+        left: 10%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        max-width: 120px;
+    }
+    .section-title, .content-title {
+        font-size: 26px;
+        line-height: 1.3;
+        letter-spacing: 15px;
+    }
+    //New Responsive CSS
+    .header-menu li a {
+        font-size: 10px!important;
+    }
+    .header-menu-wrap .user-option img {
+        max-width: 14px;
+    }
+    .story-box {
+        left: -100%;
+        max-width: 100%;
+        padding: 20px 20px 25px 40px;
+    }
+    .box-btn.open {
+        padding: 15px 5px 16px 10px;
+    }
+    .box-btn img{
+        max-width: 6px;
+    }
+    .select-chapter{
+        margin-right: 6px;
+        .nice-select{
+            min-width: 245px;
+            font-size: 13px;
+        }
+    }
+    .select-chapter,
+    .select-lang{
+         .nice-select {
+            letter-spacing: 3px;
+            padding: 4px 25px 4px 15px;
+            height: 48px;
+            font-size: 12px;
+            min-width: auto;
+            &:after{
+                border-bottom: 1px solid #fff;
+                border-right: 1px solid #fff;
+                height: 6px;
+                margin-top: -4px;
+                right: 15px;
+                width: 6px;
+            }
+            .list{
+                .option {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .audio-player .controls .toggle-play {
+        top: 5px;
+        left: 222px;
+    }
+    .story-header-right{
+        h6{
+            letter-spacing: 5px;
+            font-size: 14px;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+    .single-nft-header h2{
+        font-size: 24px;
+    }
+    .nft-box .nft-tab-content .nft-header p {
+        max-width: 100%;
+    }
+    .nft-box .nft-tab-content .nft-item .nft-info .nft-status {
+        width: 55%;
+        font-size: 10px;
+    }
+    .nft-box .nft-tab-content .nft-item .nft-info a {
+        font-size: 12px;
+    }
+   
+    .nft-wrap,
+    .gallery-wrap{
+        .container{
+            padding: 0 10px;
+        }
+    }
+    .nft-box .nft-tab-content,
+    .nft-tab-content .nft-details-wrap {
+        padding:20px 20px;
+    }
+    .nft-box .nft-tab-content .close-tab {
+        top: -42px;
+        right: 20px;
+    }
+    .nft-box .nft-tab-content .nft-header h2 {
+        letter-spacing: 2px;
+        font-size: 24px;
+    }
+    .nft-box .nft-tab-content .nft-item.style2 .nft-info h4 {
+       font-size: 16px;
+    }
+    .nft-box .nft-tab-content .nft-item.style3 .nft-info p{
+        font-size: 13px;
+    }
+    .nft-box .nft-tab-content .nft-item.style2 .nft-info span{
+        font-size: 13px;
+    }
+    .nft-box .nft-tab-content .nft-item-wrap {
+        margin-right: 0;
+        padding-right: 15px;
+    }
+    .nft-box .nft-tab-content .nft-item .nft-img .nft-animate {
+        right: 20px;
+        font-size: 12px;
+    }
+    .nft-box .nft-tab-content .nft-item .nft-img .nft-price {
+        font-size: 15px;
+        padding: 5px 16px;
+    }
+    #makePublic .modal-dialog {
+        max-width:calc(100% - 30px);
+    }
+    .single-nft-story {
+        padding-right: 15px;
+    }
+    #makePublic .modal-body .modal-action button {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .pt-100 {
+        padding-top: 70px
+    }
+
+    .pb-100 {
+        padding-bottom: 70px;
+    }
+    
+    .ptb-150 {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .ptb-250 {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    .pb-250 {
+        padding-bottom: 150px;
+    }
+    .mt-100 {
+        margin-top: 70px!important;
+    }
+    .ptb-100 {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .content-img{
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .section-title, .content-title {
+        font-size: 28px;
+        line-height: 1.3;
+        letter-spacing: 20px;
+        margin-left: -20px;
+    }
+    .content-wrap {
+        padding-top: 80px;
+    }
+    //Header CSS
+    .header-menu{
+        position: relative;
+        top: 14px;
+    }
+    .header-menu li a {
+        font-size: 16px;
+        letter-spacing: 6px;
+    }
+    //Hero CSS
+    .hero-wrap{
+        padding-top: 180px;
+       .container{
+           padding-bottom: 150px;
+       }
+        .hero-content{
+            .hero-img{
+                max-width: 600px;
+            }
+
+            .hero-circle{
+                span{
+                    width: 440px;
+                    height:  440px;
+                }
+            }
+        }
+    }
+    .scroll-link {
+        right: 60px;
+        bottom: -150px;
+    }
+    .promo-video{
+        width: 280px;
+        height: 145px;
+        bottom: 0;
+        .promo-content{
+            padding: 0 20px;
+            .promo-text{
+                width: calc(100% - 40px);
+                h4{
+                    font-size: 22px;
+                }
+                span{
+                    font-size: 14px;
+                }
+            }
+            .play-now{
+                max-width: 40px;
+            }
+        }
+    }
+    //About  css
+    .about-wrap .about-img-wrap .about-shape .triangle-one {
+        top: 130%;
+        max-width: 400px;
+    }
+    //FAQ CSS
+    .faq-wrap {
+        .section-title{
+            margin-bottom: 30px;
+        }
+        .accordion-item {
+            margin: 0 0 10px;
+            padding: 32px 0;
+            .accordion-header {
+                .accordion-button {
+                    padding: 0 85px 0 50px;
+                    font-size: 22px;
+                    line-height: 1.3;
+                    span {
+                        right: 40px;
+                        img {
+                            max-width: 32px;
+                        }
+                    }
+                }
+            }
+        }
+        .accordion-body {
+            margin: 25px 85px 0 50px;
+            padding: 40px 15px 0px 0;
+        }
+    }
+    //New Responsive CSS
+    .header-menu-wrap .header-menu li a {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+    .tool_tip.three {
+        left: 50%;
+    }
+    .nft-box .nft-tablist .nav-item .nav-link {
+        font-size: 12px;
+        letter-spacing: 4px;
+     }
+     .nft-box .nft-tab-content .nft-item-wrap .nft-item {
+         width: 100%;
+         margin-right: 0;
+     }
+}
+@media only screen and (max-width: 991px) {
+    .page-wrapper{
+        overflow-x: hidden!important;
+    }
+    .md-none {
+        display: none !important;
+    }
+    .mt-60 {
+        margin-top: 30px !important;
+    }
+    .md-center {
+        text-align: center !important;
+    }
+    //About CSS
+    .about-wrap .content-text {
+        padding-right: 0;
+        margin-bottom: 50px;
+    }
+    .about-wrap .about-img-wrap .about-img {
+        width: 100%;
+    }
+    //Roadmap CSS
+    .roadmap-wrap{
+        .section-title{
+            margin-left: 0;
+        }
+        ul{
+            padding-left: 0;
+        }
+        .container{
+            .cube-shape{
+                right: 0%;
+                max-width: 150px;
+            }
+        }
+    }
+    .timeline {
+        margin-top: 80px;
+        ul {
+            position: relative;
+            z-index: 1;
+            
+            li{
+                width: 100%;
+                margin: 0;
+                background: transparent;
+                padding-bottom: 80px;
+                &:after {
+                    content: "";
+                    left: 50%;
+                    top: 0;
+                    transform: translateX(-50%);
+                    width: 2px;
+                    height: 100%;
+                    border-radius: 0;
+                    background: #191B1B;
+                    border:none;
+                    transition: background 0.5s ease-in-out;
+                    z-index: 1;
+                }
+                &:nth-child(odd){
+                    .roadmap-box {
+                        width: 100%;
+                        transform: translate3d(0, 0, 0);
+                        left: 0;
+                        z-index: 10;
+                        h4{
+                            left: -15px;
+                        }
+                    }
+                }
+                &:nth-child(even) {
+                    .roadmap-box {
+                        width: 100%;
+                        transform: translate3d(0, 0, 0);
+                        left: 0;
+                        z-index: 10;
+                        h4{
+                            right: -15px;
+                        }
+                    }
+                }
+                &.in-view{
+                    background-color: transparent;
+                    &:last-child{
+                        background-color: transparent;
+                    }
+                    &:after {
+                        background: #D74142;
+                    }
+                }
+                .roadmap-box{
+                    bottom: -100px;
+                    padding: 25px 35px;
+
+                    h4{
+                        position: absolute;
+                        top: -30px;
+                        font-size: 100px;
+                        span{
+                            font-size: 110px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //Newsletter CSS
+    .newsletter-wrap .triangle-shape-two {
+        top: 270px;
+        left: auto;
+        right: 5%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        max-width: 100px;
+    }
+    .newsletter-wrap{
+        .section-title{
+            span{
+                display: block;
+                margin-left: 40px;
+            }
+        }
+    }
+    //Footer CSS
+    .footer-wrap{
+        .container-fluid{
+            padding:0 40px;
+        }
+        .footer-top{
+            justify-content: space-between;
+            margin-bottom: 50px;
+            .footer-logo{
+                margin-right: 0;
+            }
+        }
+        .footer-bottom{
+            .copyright-text{
+                justify-content: space-between;
+                p{
+                    text-align: left;
+                    width: calc(100% - 155px);
+                }
+                img{
+                    width: 120px;
+                }
+            }
+        }
+        .footer-widget{
+            .copyright-text{
+                text-align: left;
+            }
+        }
+    }
+    //New Responsive CSS
+    .mint-option {
+        text-align: right;
+        margin-top: 40px;
+        max-width: auto;
+    }
+    .nft-box .nft-tablist .nav-item {
+        width: 100%;
+    }
+    .mb-dropdown{
+        width: 80%;
+        position: relative;
+        .mb-dropdown-btn{
+            color: #f6e9ea;
+            width: 100%;
+            text-align: left;
+            position: relative;
+            background-color: #D74142;
+            border: none;
+            z-index: 1;
+            padding: 21px 20px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 14px;
+            border: none;
+            img{
+                max-width: 10px;
+                float: right;
+                position: relative;
+                top: 10px;
+            }
+        }
+        &:after{
+            position: absolute;
+            top: -4px;
+            left: 0;
+            content: "";
+            width: 100%;
+            height: calc(100% + 8px);
+            background-color: #D74142;
+            @include transition(0.4s);
+            z-index: -1;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .nft-tablist{
+            display: none!important;
+            position: absolute;
+            top: 68px;
+            left: 0;
+            width: 100%;
+            background-color: #0D0E0E;
+            &.open{
+                display: block!important;
+            }
+            .nav-item{
+                .nav-link{
+                    background-color: #0D0E0E;
+                    opacity: 1;
+                    text-align: left;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+    .nft-box .nft-tab-content .nft-item-wrap .nft-item {
+        width: 100%;
+        margin-right: 0;
+    }
+    .header-menu-wrap .user-option  {
+       width: 100%;
+       text-align: right;
+       margin: 7px 0 0;
+    }
+    .header-menu-wrap .user-option span {
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 10px;
+        letter-spacing: 4px;
+    }
+    .nft-box .nft-tab-content .nft-item-wrap {
+        margin-right: 0;
+        padding-right: 15px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .mb-dropdown-btn{
+        display: none!important;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .section-title, .content-title {
+        font-size: 32px;
+        line-height: 1.3;
+        letter-spacing: 25px;
+        margin-left: -20px;
+    }
+    //Hero CSS
+    .hero-wrap{
+        padding-top: 120px;
+        .hero-content{
+            .hero-img{
+                max-width: 600px;
+            }
+            .hero-circle{
+                span{
+                    width: 460px;
+                    height:  460px;
+                }
+            }
+        }
+    }
+    .scroll-link {
+        right: 60px;
+    }
+    .promo-video{
+        width: 280px;
+        height: 145px;
+        .promo-content{
+            padding: 0 20px;
+            .promo-text{
+                width: calc(100% - 40px);
+                h4{
+                    font-size: 22px;
+                }
+                span{
+                    font-size: 14px;
+                }
+            }
+            .play-now{
+                max-width: 40px;
+            }
+        }
+    }
+    //About CSS
+    .about-wrap .about-content .content-title {
+        letter-spacing: 23px;
+    }
+    .about-wrap .about-img-wrap .about-shape .triangle-one {
+        max-width: 400px;
+        left: -40px;
+    }
+    .timeline ul li:nth-child(2n) .roadmap-box {
+        width:414px;
+        left: -166px;
+    }
+    .timeline ul li:nth-child(2n+1) .roadmap-box {
+        width: 385px;
+    }
+    //Footer CSS
+    .footer-wrap{
+        .container-fluid{
+            padding: 0 35px;
+        }
+        .footer-widget{
+            .footer-logo{
+                margin-right: 40px;
+                max-width: 150px;
+            }
+            .social-profile{
+                li{
+                    margin: 0 30px 0 0;
+                    a{
+                        img{
+                            max-width: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //New Responsive CSS start
+    .nft-box .nft-tablist .nav-item .nav-link {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+    .nft-box .nft-tab-content .nft-item-wrap .nft-item {
+        width: calc(50% - 24px);
+    }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    .container-fluid{
+        padding: 0 30px;
+    }
+    //Hero CSS
+    .hero-wrap{
+        padding-top: 100px;
+        .hero-content{
+            .hero-img{
+                max-width: 700px;
+            }
+            .hero-text{
+                h1{
+                    font-size: 114px;
+                    letter-spacing: 18px;
+                    span{
+                        img{
+                            top: 17px;
+                            left: 5px;
+                            max-height: 93px;
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
+            .hero-circle{
+                span{
+                    width: 550px;
+                    height:  550px;
+                }
+            }
+        }
+    }
+    .promo-video{
+        width: 300px;
+        height: 160px;
+        .promo-content{
+            padding: 0 20px;
+            .promo-text{
+                width: calc(100% - 50px);
+                h4{
+                    font-size: 25px;
+                }
+                span{
+                    font-size: 14px;
+                }
+            }
+            .play-now{
+                max-width: 48px;
+            }
+        }
+    }
+    //About CSS
+    .about-wrap{
+        .content-title {
+            letter-spacing: 20px;
+        }
+        .triangle-one {
+            max-width: 340px;
+        }
+    }
+    .about-wrap .about-img-wrap .about-shape {
+        left: -120px;
+    }
+    //Timeline CSS
+     .timeline ul li:nth-child(2n) .roadmap-box {
+        width: 500px;
+        left: -258px;
+    }
+    .timeline ul li:nth-child(2n+1) .roadmap-box {
+        width: 470px;
+    }
+}
+@media only screen and (min-width: 1400px) {
+    .container-fluid{
+        padding: 0 60px;
+     }
+     .copyright{
+        img{
+            max-width: 100px;
+        }
+    }
+}
+@media only screen and (min-width: 1600px) {
+    .container-fluid{
+        padding: 0 60px;
+     }
+     .timeline ul li:nth-child(2n) .roadmap-box {
+        width: 600px;
+        left: -350px;
+    }
+    .timeline ul li:nth-child(2n+1) .roadmap-box {
+        width: 560px;
+    }
+}
+@media only screen and (min-width:1920px) {
+    .container{
+        max-width: 1520px;
+    }
+}
+@media only screen and (min-width:2400px) {
+    .container-fluid{
+        max-width:2200px;
+    }
+    .container{
+        max-width: 1920px;
+    }
+}
+
+
+
+
+

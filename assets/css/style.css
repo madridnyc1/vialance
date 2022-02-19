@@ -1,0 +1,2015 @@
+/*-----------------------------------------------------------
+    Theme Name: VIA - LANCE
+    Theme URI: 
+    Description: VIALANCE HTML Template
+    Author: 
+    Author URI: 
+    Version: 1.0
+-------------------------------------------------------------*/
+/*--------------------------------
+     =====Table Of Contents====
+
+1.  General Styles 
+2.  Mixins CSS
+3.  Back To Top Button CSS
+4.  Preloader CSS
+5.  Button & Link CSS
+6.  Section Title & Overlay & Shape CSS
+7.  Social Link CSS
+8.  Pagination CSS
+9.  Sidebar CSS
+     - Search Box Widget
+     - Taglist Widget
+     - Category Widget
+     - Filter Search Widget
+     - New Arrival Product Widget
+     - Popular Post Widget
+10. Sign In CSS
+11. FAQ Terms & Conditions
+----------------------------------*/
+@font-face {
+  font-family: 'Pasajero';
+  src: url(../fonts/lt_Pasajero.otf);
+}
+
+/*---------------------------------
+            General Styles 
+-----------------------------------*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus,
+button:focus,
+.btn:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+a,
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+a {
+  color: #000;
+  text-transform: inherit;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+a:hover,
+a :focus {
+  text-decoration: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #000;
+}
+
+a:focus {
+  outline: 0 solid;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.4;
+  color: #000;
+  font-family: "Pasajero";
+}
+
+body {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #666666;
+  background-image: url(../img/bg-1.jpg);
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: contain;
+  background-color: #EDEEF0;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #666666;
+}
+
+select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(../img/down-arrow.png);
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: 94% 50%;
+}
+
+.pt-150 {
+  padding-top: 150px;
+}
+
+.pb-150 {
+  padding-bottom: 150px;
+}
+
+.pt-150 {
+  padding-top: 150px;
+}
+
+.pb-250 {
+  padding-bottom: 250px;
+}
+
+.pt-250 {
+  padding-top: 250px;
+}
+
+.pb-250 {
+  padding-bottom: 250px;
+}
+
+.ptb-250 {
+  padding-top: 250px;
+  padding-bottom: 250px;
+}
+
+.ptb-150 {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.list-style {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-style li {
+  list-style: none;
+}
+
+.page-wrapper {
+  overflow-x: hidden;
+}
+
+/*---------------------------------
+          Mixins & Animation CSS
+-----------------------------------*/
+.header-menu-wrap, .promo-video .promo-content, .footer-wrap .footer-widget, .footer-wrap .copyright-text, .story-header-left, .nft-box .nft-tab-content .nft-item .nft-info, #makePublic .modal-body .modal-action, .newsletter-wrap .newsletter-form .form-group, .nft-box .nft-tablist, .nft-box .nft-tab-content .nft-item-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.header-menu-wrap, .promo-video .promo-content, .footer-wrap .footer-widget, .footer-wrap .copyright-text, .story-header-left, .nft-box .nft-tab-content .nft-item .nft-info {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+}
+
+.nft-box .nft-tab-content .nft-item .nft-info, #makePublic .modal-body .modal-action {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.header-menu-wrap {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.bounce {
+  -webkit-animation: float 1500ms infinite ease-in-out;
+  animation: float 1500ms infinite ease-in-out;
+}
+
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+/*---------------------------------
+     Back To Top Button CSS
+-----------------------------------*/
+.back-to-top {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  display: none;
+  position: fixed;
+  bottom: 230px;
+  right: 20px;
+  z-index: 999;
+  border-radius: 5px;
+  background: #D74142;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.back-to-top span {
+  font-size: 14px;
+  line-height: 48px;
+  color: #fff;
+  letter-spacing: 4px;
+  position: relative;
+  left: 2px;
+}
+
+.back-to-top:hover {
+  color: #fff;
+}
+
+.back-to-top.open {
+  bottom: 30px;
+}
+
+/*---------------------------------
+     Preloader CSS
+-----------------------------------*/
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 20000;
+  overflow-x: hidden !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loader div {
+  width: 12px;
+  height: 12px;
+  margin: 0 10px 0 0;
+  border-radius: 50px;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  display: inline-block;
+  -webkit-animation: bouncing 1.4s linear infinite;
+          animation: bouncing 1.4s linear infinite;
+}
+
+.loader div:last-child {
+  margin: 0;
+}
+
+.loader div:nth-child(1) {
+  background: rgba(215, 65, 66, 0.9);
+}
+
+.loader div:nth-child(2) {
+  background: rgba(215, 65, 66, 0.7);
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.loader div:nth-child(3) {
+  background: rgba(215, 65, 66, 0.5);
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+@-webkit-keyframes bouncing {
+  0%, 100% {
+    -webkit-transform: translateY(0) scale(1, 1);
+            transform: translateY(0) scale(1, 1);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: translateY(80px) scale(1, 1);
+            transform: translateY(80px) scale(1, 1);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  50% {
+    -webkit-transform: translateY(80px) scale(1.5, 0.5);
+            transform: translateY(80px) scale(1.5, 0.5);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  55% {
+    -webkit-transform: translateY(80px) scale(1, 1);
+            transform: translateY(80px) scale(1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+@keyframes bouncing {
+  0%, 100% {
+    -webkit-transform: translateY(0) scale(1, 1);
+            transform: translateY(0) scale(1, 1);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: translateY(80px) scale(1, 1);
+            transform: translateY(80px) scale(1, 1);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  50% {
+    -webkit-transform: translateY(80px) scale(1.5, 0.5);
+            transform: translateY(80px) scale(1.5, 0.5);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  55% {
+    -webkit-transform: translateY(80px) scale(1, 1);
+            transform: translateY(80px) scale(1, 1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.bg-f {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.text-dwan {
+  color: #F6E9EA;
+}
+
+.section-title,
+.content-title {
+  font-size: 50px;
+  line-height: 1;
+  letter-spacing: 28px;
+  font-weight: 500;
+  margin-left: -40px;
+  text-transform: uppercase;
+}
+
+.section-title .font-two,
+.content-title .font-two {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+/*-------------------------------
+    Header  Section CSS
+-------------------------------*/
+.header-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  padding: 50px 0 15px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.header-wrap.sticky {
+  position: fixed;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+  background: #fff;
+  -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+  width: 100%;
+  padding: 25px 0 25px;
+  top: 0;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header-wrap .navbar-brand img {
+  max-height: 80px;
+}
+
+.header-menu-wrap .user-option {
+  color: #9BA58C;
+  margin-left: 30px;
+}
+
+.header-menu-wrap .user-option img {
+  max-width: 20px;
+  position: relative;
+  top: -1px;
+}
+
+.header-menu-wrap .user-option span {
+  position: relative;
+  border-left: 1px solid #9BA58C;
+  padding-left: 15px;
+  margin-left: 15px;
+  display: inline-block;
+  line-height: 1;
+  font-size: 15px;
+  letter-spacing: 4.5px;
+}
+
+.header-menu {
+  text-align: right;
+}
+
+.header-menu li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.header-menu li:first-child {
+  margin-left: 0;
+}
+
+.header-menu li:last-child a {
+  padding-right: 0;
+}
+
+.header-menu li:last-child a:hover {
+  padding-right: 1rem;
+}
+
+.header-menu li a {
+  font-size: 14px;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  color: #9c9c9c;
+  line-height: 1.2;
+  text-align: right;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.header-menu li a:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-color: #D74142;
+  width: 0;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.header-menu li a:hover {
+  color: #fff;
+}
+
+.header-menu li a:hover:after {
+  width: 100%;
+  visibility: visible;
+  opacity: 1;
+}
+
+/*-------------------------------
+    Hero  Section CSS
+-------------------------------*/
+.hero-wrap {
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+.hero-wrap .hero-content {
+  position: relative;
+}
+
+.hero-wrap .hero-content .hero-img {
+  display: block;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+  max-width: 900px;
+  max-height: calc(100vh - 145px);
+}
+
+.hero-wrap .hero-content .hero-img-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 75%;
+  z-index: 1;
+}
+
+.hero-wrap .hero-content .hero-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.hero-wrap .hero-content .hero-circle span {
+  display: inline-block;
+  width: 700px;
+  height: 700px;
+  max-height: calc(100vh - 145px);
+  max-width: calc(100vh - 145px);
+  border-radius: 50%;
+  background-color: transparent;
+  border: 3px solid #000;
+  z-index: -1;
+  margin: 0 auto;
+}
+
+.hero-wrap .container {
+  position: relative;
+}
+
+.promo-video {
+  position: relative;
+  background-image: url(../img/newsletter-bg.png);
+  width: 350px;
+  height: 170px;
+  overflow: hidden;
+  z-index: 1;
+  position: absolute;
+  bottom: 80px;
+  right: 10px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.promo-video:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.18);
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  z-index: -1;
+}
+
+.promo-video:after {
+  position: absolute;
+  top: -52px;
+  left: -70px;
+  content: "";
+  width: 40%;
+  height: 100vh;
+  background: #D74142;
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.promo-video:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+
+.promo-video:hover:after {
+  background: #9AA58B;
+}
+
+.promo-video .promo-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  padding: 0 30px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.promo-video .promo-content .promo-text {
+  width: calc(100% - 60px);
+}
+
+.promo-video .promo-content .promo-text h4, .promo-video .promo-content .promo-text span {
+  color: #FFFFFF;
+}
+
+.promo-video .promo-content .promo-text h4 {
+  font-size: 28px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+
+.promo-video .promo-content .promo-text span {
+  font-weight: 600;
+  letter-spacing: 5px;
+  font-size: 14px;
+}
+
+.promo-video .promo-content .play-now {
+  max-width: 55px;
+}
+
+.scroll-link {
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  letter-spacing: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  right: 80px;
+  bottom: 100px;
+}
+
+.scroll-link img {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: relative;
+  left: -60px;
+}
+
+/*-------------------------------
+    About   Section CSS
+-------------------------------*/
+.about-wrap .container {
+  position: relative;
+}
+
+.about-wrap .content-title {
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.about-wrap .content-title .font-two {
+  margin-left: 0;
+}
+
+.about-wrap .content-title span {
+  margin-left: 50px;
+}
+
+.about-wrap .content-text {
+  padding-right: 100px;
+}
+
+.about-wrap .content-text p {
+  color: #1e1e1e;
+  text-align: justify;
+}
+
+.about-wrap .content-text p a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.about-wrap .about-img-wrap {
+  position: relative;
+}
+
+.about-wrap .about-img-wrap .about-shape {
+  position: absolute;
+  top: 0;
+  left: -80px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.about-wrap .about-img-wrap .about-shape .triangle-one {
+  position: absolute;
+  top: 115%;
+  max-width: 540px;
+  margin-right: auto;
+}
+
+.about-wrap .about-img-wrap .about-img {
+  margin-left: auto;
+  display: block;
+}
+
+/*-------------------------------
+    Roadmap  Section CSS
+-------------------------------*/
+.roadmap-bg-1 {
+  background-image: url(../img/roadmap-1.png);
+}
+
+.roadmap-bg-2 {
+  background-image: url(../img/roadmap-2.png);
+}
+
+.roadmap-bg-3 {
+  background-image: url(../img/roadmap-3.png);
+}
+
+.roadmap-bg-4 {
+  background-image: url(../img/roadmap-4.png);
+}
+
+.roadmap-bg-5 {
+  background-image: url(../img/roadmap-5.png);
+}
+
+.roadmap-wrap {
+  background-color: #191B1B;
+  position: relative;
+}
+
+.roadmap-wrap .container {
+  position: relative;
+}
+
+.roadmap-wrap .container .cube-shape {
+  position: absolute;
+  top: 100%;
+  right: 5%;
+  max-width: 200px;
+}
+
+.roadmap-wrap .section-title {
+  color: #F6E9EA;
+  margin-bottom: 25px;
+}
+
+.roadmap-wrap .section-text {
+  color: #F6E9EA;
+}
+
+.roadmap-box {
+  padding: 35px;
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.roadmap-box:after {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  content: "";
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border-right: 3px dashed #D74142;
+  border-bottom: 3px dashed #D74142;
+  z-index: -1;
+}
+
+.roadmap-box:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.roadmap-box h3, .roadmap-box p {
+  position: relative;
+  z-index: 1;
+  color: #F6E9EA;
+}
+
+.roadmap-box h3 {
+  font-size: 22px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #f6e9ea;
+  margin-bottom: 18px;
+}
+
+.roadmap-box p {
+  margin: 0;
+}
+
+.timeline {
+  margin-top: 80px;
+}
+
+.timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 2px;
+  margin: 0 auto;
+  background: #483A3A;
+  padding-bottom: 40px;
+}
+
+.timeline ul li:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #191B1B;
+  border: 1px solid #483A3A;
+  z-index: 1;
+  -webkit-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) .roadmap-box {
+  width: 660px;
+  left: 215px;
+  -webkit-transform: translate3d(-150px, 0, 0);
+          transform: translate3d(-150px, 0, 0);
+}
+
+.timeline ul li:nth-child(odd) .roadmap-box h4 {
+  left: -25px;
+}
+
+.timeline ul li:nth-child(even) .roadmap-box {
+  width: 700px;
+  left: -450px;
+  -webkit-transform: translate3d(-315px, 0, 0);
+          transform: translate3d(-315px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) .roadmap-box h4 {
+  right: -25px;
+}
+
+.timeline ul li:last-child {
+  background-color: transparent;
+  padding-bottom: 0;
+}
+
+.timeline ul li.in-view {
+  background-color: #D74142;
+}
+
+.timeline ul li.in-view:last-child {
+  background-color: transparent;
+}
+
+.timeline ul li.in-view:after {
+  background: #D74142;
+}
+
+.timeline ul li.in-view .roadmap-box {
+  bottom: 0;
+  visibility: visible;
+  opacity: 1;
+  -webkit-box-shadow: 3px 5px 1px 0px #D74142;
+          box-shadow: 3px 5px 1px 0px #D74142;
+}
+
+.timeline ul li.in-view .roadmap-box:after {
+  display: none;
+}
+
+.timeline ul li.in-view .roadmap-box h3, .timeline ul li.in-view .roadmap-box p {
+  opacity: 1;
+}
+
+.timeline ul li .roadmap-box {
+  position: relative;
+  bottom: -100px;
+  padding: 25px 35px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.timeline ul li .roadmap-box h3, .timeline ul li .roadmap-box p {
+  opacity: 0.4;
+}
+
+.timeline ul li .roadmap-box h4 {
+  position: absolute;
+  top: -40px;
+  font-size: 120px;
+  line-height: 1;
+  font-family: "Pasajero";
+  font-weight: 700;
+  color: #f6e9ea;
+  opacity: 0.05;
+  letter-spacing: 16px;
+}
+
+.timeline ul li .roadmap-box h4 span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 130px;
+}
+
+/*-------------------------------
+    Content  Section CSS
+-------------------------------*/
+.content-wrap .content-para .content-title {
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+.content-wrap .content-para .content-title span {
+  margin-left: 45px;
+}
+
+.content-wrap .content-para p {
+  color: #1A1B1C;
+  text-align: justify;
+}
+
+/*-------------------------------
+    Newsletter  Section CSS
+-------------------------------*/
+.newsletter-wrap {
+  background-image: url(../img/newsletter-bg.png);
+  position: relative;
+  z-index: 1;
+}
+
+.newsletter-wrap .overlay-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.newsletter-wrap .container {
+  position: relative;
+}
+
+.newsletter-wrap .section-title {
+  color: #F6E9EA;
+  margin-bottom: 25px;
+}
+
+.newsletter-wrap .section-para {
+  color: #F6E9EA;
+  margin-bottom: 30px;
+}
+
+.newsletter-wrap .triangle-shape-two {
+  position: absolute;
+  top: 220px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  max-width: 150px;
+}
+
+.newsletter-wrap .newsletter-form p {
+  color: #F6E9EA;
+}
+
+.newsletter-wrap .newsletter-form .form-group input {
+  width: calc(100% - 204px);
+  height: 60px;
+  background-color: #F6E9EA;
+  padding: 20px 20px 20px 35px;
+  border: none;
+}
+
+.newsletter-wrap .newsletter-form .form-group button {
+  background-color: #D64141;
+  border: none;
+  padding: 10px 33px;
+  height: 61px;
+  letter-spacing: 6px;
+  color: #F6E9EA;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.newsletter-text {
+  background-color: #000;
+  padding: 30px 0 28px;
+}
+
+.newsletter-text p {
+  color: #F6E9EA;
+  margin-bottom: 0;
+}
+
+.newsletter-text p a {
+  text-decoration: underline;
+  font-weight: 500;
+  color: #F6E9EA;
+}
+
+/*-------------------------------
+    FAQ  Section CSS
+-------------------------------*/
+.faq-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.faq-wrap .section-title {
+  margin-bottom: 40px;
+}
+
+.faq-wrap .accordion-button:not(.collapsed) {
+  background-color: #E2E2E2 !important;
+  color: #000;
+}
+
+.faq-wrap .accordion-button:not(.collapsed) span img.plus {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.faq-wrap .accordion-button:not(.collapsed) span img.minus {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.faq-wrap .accordion-button:not(.collapsed)::after {
+  left: -4px;
+}
+
+.faq-wrap .accordion-item {
+  position: relative;
+  z-index: 1;
+  background-color: #E2E2E2;
+  border-radius: 0;
+  border: none;
+  margin: 0 0 25px;
+  padding: 50px 0;
+}
+
+.faq-wrap .accordion-item:last-child {
+  margin: 0;
+}
+
+.faq-wrap .accordion-item:last-child .accordion-header {
+  margin-bottom: 0;
+}
+
+.faq-wrap .accordion-item .accordion-header .accordion-button {
+  background-color: transparent;
+  border-radius: 0;
+  display: block;
+  padding: 0 85px 0 50px;
+  color: #1A1B1C;
+  font-size: 28px;
+  line-height: 1.3;
+  border-radius: 5px !important;
+  margin: 0;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.faq-wrap .accordion-item .accordion-header .accordion-button:after {
+  display: none;
+}
+
+.faq-wrap .accordion-item .accordion-header .accordion-button:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.faq-wrap .accordion-item .accordion-header .accordion-button span {
+  position: absolute;
+  top: 0px;
+  right: 50px;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  margin-right: 0;
+  display: inline-block;
+}
+
+.faq-wrap .accordion-item .accordion-header .accordion-button span img {
+  max-width: 32px;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.faq-wrap .accordion-item .accordion-header .accordion-button span img.minus {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.faq-wrap .accordion-item .accordion-header .accordion-button span img.minus {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.faq-wrap .accordion-body {
+  margin: 40px 85px 0 50px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 40px 5px 0px 0;
+}
+
+.faq-wrap .accordion-body p {
+  margin: 0;
+  color: #1a1b1c;
+}
+
+.faq-wrap .accordion-body p a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/*-------------------------------
+    Footer  Section CSS
+-------------------------------*/
+.social-profile li {
+  display: inline-block;
+}
+
+.social-profile li a img {
+  max-width: 30px;
+}
+
+.footer-wrap {
+  background-color: #151618;
+  padding: 120px 0;
+}
+
+.footer-wrap .footer-widget .footer-logo {
+  margin-right: 70px;
+  max-width: 170px;
+}
+
+.footer-wrap .footer-widget .social-profile {
+  position: relative;
+  top: 10px;
+}
+
+.footer-wrap .footer-widget .social-profile li {
+  display: inline-block;
+  margin: 0 50px 0 0;
+}
+
+.footer-wrap .footer-widget .social-profile li:last-child {
+  margin-right: 0;
+}
+
+.footer-wrap .footer-widget .social-profile li a img {
+  max-width: 32px;
+}
+
+.footer-wrap .copyright-text {
+  text-align: right;
+  width: 100%;
+  position: relative;
+  top: 5px;
+}
+
+.footer-wrap .copyright-text p {
+  color: #8f8889;
+  text-align: right;
+  width: 100%;
+  position: relative;
+  top: 5px;
+  margin: 0;
+  width: calc(100% - 155px);
+  margin-right: 35px;
+}
+
+.footer-wrap .copyright-text img {
+  max-width: 120px;
+}
+
+/*-------------------------------
+    Gallery Section CSS
+-------------------------------*/
+.gallery-wrap {
+  background-image: url(../img/gallery-bg.jpg);
+  padding: 120px 0 100px;
+}
+
+.mint-option {
+  text-align: right;
+  margin-top: -100px;
+  max-width: 250px;
+  margin-left: auto;
+  position: relative;
+  z-index: 9;
+}
+
+.mint-btn {
+  background-color: #9BA58C;
+  color: #fff;
+  padding: 13px 50px 13px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.mint-btn.style1:hover, .mint-btn.style1.sold {
+  background-color: #612429;
+}
+
+.mint-btn.style2 {
+  padding: 8px 50px 7px;
+}
+
+.box-btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 15px 10px 16px;
+  position: relative;
+  z-index: 1;
+  margin-top: 17px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.box-btn img {
+  max-width: 8px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.box-btn.open {
+  background-color: transparent;
+  padding: 15px 10px 16px 20px;
+}
+
+.box-btn.open img {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.story-box-wrapper {
+  position: relative;
+  min-height: 750px;
+  margin: 60px 0 0;
+  overflow: hidden;
+}
+
+.story-box {
+  position: absolute;
+  top: 0;
+  left: -101%;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  max-width: 700px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px 20px 30px 50px;
+}
+
+.story-box.open {
+  left: 0;
+}
+
+.select-chapter {
+  margin-right: 10px;
+}
+
+.select-chapter .nice-select {
+  min-width: 245px;
+}
+
+.select-chapter .nice-select,
+.select-lang .nice-select {
+  background: #D74142;
+  border-radius: 0;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  padding: 6px 45px 6px 20px;
+  height: 52px;
+}
+
+.select-chapter .nice-select:after,
+.select-lang .nice-select:after {
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  height: 8px;
+  margin-top: -5px;
+  right: 20px;
+  width: 8px;
+}
+
+.select-chapter .nice-select .list,
+.select-lang .nice-select .list {
+  width: 100%;
+  border-radius: 0;
+  background-color: #F5E9E9;
+  margin-top: 1px;
+}
+
+.select-chapter .nice-select .list .option,
+.select-lang .nice-select .list .option {
+  color: #333;
+  padding: 6px 50px 6px 20px;
+  font-weight: 500;
+  border-bottom: 1px solid #5C5858;
+}
+
+.select-chapter .nice-select .list .option:last-child,
+.select-lang .nice-select .list .option:last-child {
+  border-bottom: none;
+}
+
+.select-chapter .nice-select .list .option.focus, .select-chapter .nice-select .list .option.selected.focus, .select-chapter .nice-select .list .option:hover,
+.select-lang .nice-select .list .option.focus,
+.select-lang .nice-select .list .option.selected.focus,
+.select-lang .nice-select .list .option:hover {
+  background-color: #DEDEDE;
+}
+
+.select-chapter .nice-select .list .option.selected,
+.select-lang .nice-select .list .option.selected {
+  font-weight: 500;
+}
+
+.story-header-right {
+  text-align: right;
+}
+
+.story-header-right h6 {
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 5px;
+  font-size: 16px;
+}
+
+.story-header-right p {
+  margin: 0;
+  color: #7C7474;
+  font-size: 14px;
+}
+
+.story-header-right p a {
+  color: #7C7474;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #7C7474;
+          text-decoration-color: #7C7474;
+}
+
+.tool_tip {
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.tool_tip img {
+  max-width: 19px;
+}
+
+.tool_tip:after {
+  text-transform: none;
+  content: attr(data-tooltip);
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+  top: 38px;
+  color: #F6E9EA;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 13px 22px;
+  width: 320px;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  letter-spacing: 0;
+}
+
+.tool_tip:hover:after {
+  opacity: 1;
+}
+
+.tool_tip.one, .tool_tip.two, .tool_tip.three {
+  position: absolute;
+  margin-right: 0;
+}
+
+.tool_tip.one:after, .tool_tip.two:after, .tool_tip.three:after {
+  width: 380px;
+  top: 0;
+  left: 20px;
+}
+
+.tool_tip.one {
+  top: 5%;
+  left: 30%;
+}
+
+.tool_tip.one:after {
+  left: 20px;
+}
+
+.tool_tip.two {
+  top: 15%;
+  right: 12%;
+}
+
+.tool_tip.two:after {
+  left: auto;
+  right: 20px;
+}
+
+.tool_tip.three {
+  top: 45%;
+  left: 65%;
+}
+
+.tool_tip.three:after {
+  left: 20px;
+}
+
+.audio-wrap {
+  position: relative;
+  margin: 0 0 25px;
+}
+
+.audio-wrap p {
+  margin: 0 0 10px;
+  color: #F6E9EA;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.audio-wrap p span {
+  display: inline-block;
+}
+
+.audio-player .audio_timeline {
+  background: white;
+  width: 300px;
+  height: 3px;
+  background-color: #333335;
+  position: relative;
+  cursor: pointer;
+}
+
+.audio-player .audio_timeline .progress {
+  background: #fff;
+  width: 0%;
+  height: 100%;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  position: absolute;
+  left: 0;
+}
+
+.audio-player .controls .time {
+  display: none !important;
+}
+
+.audio-player .controls .toggle-play {
+  position: absolute;
+  top: 6px;
+  left: 228px;
+  cursor: pointer;
+}
+
+.audio-player .controls .toggle-play img {
+  max-width: 13px;
+}
+
+.audio-player .controls .toggle-play.play .play-audio {
+  display: block;
+}
+
+.audio-player .controls .toggle-play.play .pause-audio {
+  display: none;
+}
+
+.audio-player .controls .toggle-play.pause img {
+  max-width: 10px;
+  position: relative;
+  top: 2px;
+}
+
+.audio-player .controls .toggle-play.pause .play-audio {
+  display: none;
+}
+
+.audio-player .controls .toggle-play.pause .pause-audio {
+  display: block;
+}
+
+.audio-player .controls .toggle-play.pause:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.story-title {
+  margin: 20px 0 25px;
+}
+
+.story-title h2 {
+  color: #F6E9EA;
+  font-family: "Poppins", sans-serif;
+  margin: 0 0 10px;
+  letter-spacing: 3px;
+  font-weight: 300;
+  font-size: 32px;
+}
+
+.story-para {
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 15px;
+}
+
+.story-para p {
+  color: #F6E9EA;
+}
+
+#ascrail2000 {
+  background-color: #333335;
+}
+
+.story-box #ascrail2000 {
+  display: block !important;
+}
+
+/*-------------------------------
+    NFT Section CSS
+-------------------------------*/
+.nft-wrap {
+  background-image: url(../img/gallery-bg.jpg);
+  padding: 150px 0 100px;
+}
+
+.nft-box {
+  background-color: #0D0E0E;
+}
+
+.nft-box .nft-tablist {
+  background-color: #191A1C;
+  border: none;
+}
+
+.nft-box .nft-tablist .nav-item {
+  width: 20%;
+}
+
+.nft-box .nft-tablist .nav-item .nav-link {
+  width: 100%;
+  color: #f6e9ea;
+  opacity: 0.7;
+  text-align: center;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  z-index: 1;
+  padding: 21px 10px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 14px;
+  border-right: 1px solid #0D0E0E;
+}
+
+.nft-box .nft-tablist .nav-item .nav-link:after {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: calc(100% + 8px);
+  background-color: #D74142;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.nft-box .nft-tablist .nav-item .nav-link.active {
+  color: #fff;
+  opacity: 1;
+}
+
+.nft-box .nft-tablist .nav-item .nav-link.active:after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nft-box .nft-tablist .nav-item:last-child .nav-link {
+  border-right: none;
+}
+
+.nft-box .nft-tab-content {
+  padding: 50px 50px;
+  position: relative;
+}
+
+.nft-box .nft-tab-content .close-tab {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.nft-box .nft-tab-content .close-tab img {
+  max-width: 12px;
+}
+
+.nft-box .nft-tab-content .nft-header {
+  margin-bottom: 40px;
+}
+
+.nft-box .nft-tab-content .nft-header h2 {
+  color: #F6E9EA;
+  font-family: "Poppins", sans-serif;
+  margin: 0 0 10px;
+  letter-spacing: 3px;
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.nft-box .nft-tab-content .nft-header p {
+  margin: 0;
+  color: #F6E9EA;
+  max-width: 95%;
+}
+
+.nft-box .nft-tab-content .nft-item-blank-text {
+  color: #F6E9EA;
+  margin: 0 0 30px;
+  opacity: 0.8;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.nft-box .nft-tab-content .nft-item {
+  margin-bottom: 25px;
+}
+
+.nft-box .nft-tab-content .nft-item.sold .nft-price {
+  opacity: 0.4;
+}
+
+.nft-box .nft-tab-content .nft-item.sold .nft-info .nft-status {
+  background-color: #D74142;
+}
+
+.nft-box .nft-tab-content .nft-item .nft-img {
+  position: relative;
+}
+
+.nft-box .nft-tab-content .nft-item .nft-img .nft-price {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 4px;
+  background-color: #0B0B0B;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 13px 25px;
+  margin: 0;
+}
+
+.nft-box .nft-tab-content .nft-item .nft-img .nft-price span {
+  display: block;
+  letter-spacing: 4px;
+}
+
+.nft-box .nft-tab-content .nft-item .nft-img .nft-animate {
+  position: absolute;
+  top: -8px;
+  right: 25px;
+  color: #F6E9EA;
+  background-color: #191A1C;
+  display: inline-block;
+  padding: 9px 15px;
+  line-height: 1;
+}
+
+.nft-box .nft-tab-content .nft-item .nft-info {
+  margin: 15px 0 0;
+}
+
+.nft-box .nft-tab-content .nft-item .nft-info a {
+  width: 45%;
+  color: #F6E9EA;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.nft-box .nft-tab-content .nft-item .nft-info .nft-status {
+  width: 55%;
+  display: block;
+  font-size: 13px;
+  letter-spacing: 4px;
+  padding: 7px 0;
+}
+
+.nft-box .nft-tab-content .nft-item.style2 .nft-info {
+  display: block;
+  margin: 0 0 20px;
+}
+
+.nft-box .nft-tab-content .nft-item.style2 .nft-info h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin: 0 0 5px;
+  color: #F6E9EA;
+  letter-spacing: 1px;
+}
+
+.nft-box .nft-tab-content .nft-item.style2 .nft-info span {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #F6E9EA;
+}
+
+.nft-box .nft-tab-content .nft-item.style2 .nft-img .nft-details-btn {
+  position: absolute;
+  top: 45px;
+  right: 25px;
+  background-color: transparent;
+  border: none;
+}
+
+.nft-box .nft-tab-content .nft-item.style2 .nft-img .nft-details-btn img {
+  max-width: 10px;
+}
+
+.nft-box .nft-tab-content .nft-item.style3 .nft-info p {
+  text-transform: uppercase;
+  letter-spacing: 5.5px;
+  font-size: 14px;
+  color: #fff;
+  opacity: 1;
+  margin: 0 0 5px;
+}
+
+.nft-box .nft-tab-content .nft-item.style3 .nft-info span {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #F6E9EA;
+  display: block;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.nft-box .nft-tab-content .nft-item.style3 .nft-info .nft-status {
+  background-color: #9BA58C;
+  width: 45%;
+}
+
+.nft-box .nft-tab-content .nft-item-wrap {
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-right: -24px;
+}
+
+.nft-box .nft-tab-content .nft-item-wrap .nft-item {
+  width: calc(33.33% - 24px);
+  margin-right: 24px;
+}
+
+#makePublic .modal-dialog {
+  max-width: 700px;
+}
+
+#makePublic .modal-body {
+  padding: 15px 20px;
+  background-color: #191A1C;
+}
+
+#makePublic .modal-body p {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+#makePublic .modal-body .modal-action button {
+  width: 48%;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  padding: 9px 5px;
+}
+
+#makePublic .modal-body .modal-action button.btn {
+  background-color: #0E0E0E;
+  color: #fff;
+  border-radius: 7px;
+}
+
+.nft-tab-content {
+  position: relative;
+}
+
+.nft-tab-content .nft-details-wrap {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #0D0E0E;
+  padding: 50px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.nft-tab-content .nft-details-wrap.open {
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.back-to-nft {
+  background: #191A1C;
+  border: none;
+  color: #F6E9EA;
+  padding: 6px 25px 7px 20px;
+  border-radius: 5px;
+}
+
+.back-to-nft img {
+  max-width: 7px;
+  position: relative;
+  margin-right: 9px;
+  top: -1px;
+}
+
+.single-nft-header {
+  margin: 0 0 20px;
+}
+
+.single-nft-header h2 {
+  color: #F6E9EA;
+  font-family: "Poppins", sans-serif;
+  margin: 0 0 5px;
+  letter-spacing: 3px;
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.single-nft-header span {
+  color: #f6e9ea;
+  opacity: 0.9;
+  text-align: center;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 14px;
+}
+
+.single-nft-story {
+  margin: 0 0 15px;
+}
+
+.single-nft-story h5 {
+  color: #F6E9EA;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  letter-spacing: 4px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.single-nft-story h5 img {
+  position: relative;
+  margin-right: 5px;
+  top: -2px;
+  max-width: 16px;
+}
+
+.single-nft-story h6 {
+  color: #F6E9EA;
+  font-family: "Poppins", sans-serif;
+  margin: 10px 0 20px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.single-nft-story p {
+  color: #F6E9EA;
+  opacity: 0.8;
+}
+
+.nft-status {
+  background-color: #9BA58C;
+  display: inline-block;
+  border: none;
+  text-align: center;
+  padding: 10px 15px;
+  color: #fff;
+  letter-spacing: 4px;
+  border-radius: 7px;
+  text-transform: uppercase;
+}
+
+.nft-status.sold {
+  background-color: #D74142;
+}
+
+.header-wrap.sticky .header-menu.style2 li a {
+  color: #777;
+}
+
+.header-wrap.sticky .header-menu.style2 li a:hover {
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
