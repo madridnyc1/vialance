@@ -80,7 +80,7 @@
     //Nice Scroll js
     $(".nft-item-wrap, .story-para").niceScroll({
         cursorcolor: "#fff", // change cursor color in hex
-        cursoropacitymin: 0, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
+        cursoropacitymin: 1, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
         cursoropacitymax: 1, // change opacity when cursor is active (scrollabar "visible" state), range from 1 to 0
         cursorwidth: "5px", // cursor width in pixel (you can also write "5px")
         cursorborder: "1px solid #fff", // css definition for cursor border
@@ -88,15 +88,15 @@
         zindex: "auto", // change z-index for scrollbar div
         scrollspeed: 60, // scrolling speed
         mousescrollstep: 40, // scrolling speed with mouse wheel (pixel)
-        touchbehavior: false, // enable cursor-drag scrolling like touch devices in desktop computer
+        touchbehavior: true, // enable cursor-drag scrolling like touch devices in desktop computer
         hwacceleration: true, // use hardware accelerated scroll when supported
         boxzoom: false, // enable zoom for box content
-        dblclickzoom: true, // (only when boxzoom=true) zoom activated when double click on box
-        gesturezoom: true, // (only when boxzoom=true and with touch devices) zoom activated when pinch out/in on box
+        dblclickzoom: false, // (only when boxzoom=true) zoom activated when double click on box
+        gesturezoom: false, // (only when boxzoom=true and with touch devices) zoom activated when pinch out/in on box
         grabcursorenabled: true, // (only when touchbehavior=true) display "grab" icon
         autohidemode: false, // how hide the scrollbar works, possible values: 
         background: "", // change css for rail background
-        iframeautoresize: true, // autoresize iframe on load event
+        iframeautoresize: false, // autoresize iframe on load event
         cursorminheight: 32, // set the minimum cursor height (pixel)
         preservenativescrolling: true, // you can scroll native scrollable areas with mouse, bubbling mouse wheel event
         railoffset: false, // you can add offset top/left for rail position
@@ -113,7 +113,7 @@
         sensitiverail: true, // click on rail make a scroll
         enablemouselockapi: true, // can use mouse caption lock API (same issue on object dragging)
         cursorfixedheight: false, // set fixed height for cursor in pixel
-        hidecursordelay: 400, // set the delay in microseconds to fading out scrollbars
+        hidecursordelay: 40000, // set the delay in microseconds to fading out scrollbars
         irectionlockdeadzone: 6, // dead zone in pixels for direction lock activation
         nativeparentscrolling: true, // detect bottom of content and let parent to scroll, as native scroll does
         enablescrollonselection: true, // enable auto-scrolling of content when selection text
@@ -123,7 +123,7 @@
         oneaxismousemode: "auto", 
         scriptpath: "", // define custom path for boxmode icons ("" => same script path)
         preventmultitouchscrolling: true,// prevent scrolling on multitouch events
-        disablemutationobserver: false,
+        disablemutationobserver: true,
       });  
     //Back To top
     function BackToTop() {

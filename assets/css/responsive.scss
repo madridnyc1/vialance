@@ -210,8 +210,8 @@ $clr_off_yellow:#FEFCE5;
     .content-title{
         margin-left: -20px;
     }
-     //Header CSS
-     .header-menu{
+    //Header CSS
+    .header-menu{
         position: relative;
         top: 8px;
         li{
@@ -232,8 +232,7 @@ $clr_off_yellow:#FEFCE5;
         
     }
     .navbar-brand img{
-        height: 50px;
-        max-width: none;
+        max-width: 100px;
     }
     //Hero CSS
     .hero-wrap{
@@ -419,6 +418,10 @@ $clr_off_yellow:#FEFCE5;
         top: 130%;
         max-width: 400px;
     }
+    //Gallery modal
+    #galleryModal .modal-dialog{
+        max-width: 540px;
+    }
     
 }
 
@@ -579,10 +582,6 @@ $clr_off_yellow:#FEFCE5;
     .nft-box .nft-tab-content,
     .nft-tab-content .nft-details-wrap {
         padding:20px 20px;
-    }
-    .nft-box .nft-tab-content .close-tab {
-        top: -42px;
-        right: 20px;
     }
     .nft-box .nft-tab-content .nft-header h2 {
         letter-spacing: 2px;
@@ -757,11 +756,15 @@ $clr_off_yellow:#FEFCE5;
     .nft-box .nft-tablist .nav-item .nav-link {
         font-size: 12px;
         letter-spacing: 4px;
-     }
-     .nft-box .nft-tab-content .nft-item-wrap .nft-item {
-         width: 100%;
-         margin-right: 0;
-     }
+    }
+    .nft-box .nft-tab-content .nft-item-wrap .nft-item {
+        width: 100%;
+        margin-right: 0;
+    }
+    //Gallery Modal
+    #galleryModal .modal-dialog{
+        max-width: 720px;
+    }
 }
 @media only screen and (max-width: 991px) {
     .page-wrapper{
@@ -927,7 +930,7 @@ $clr_off_yellow:#FEFCE5;
         width: 100%;
     }
     .mb-dropdown{
-        width: 80%;
+        width: calc(100% - 50px);
         position: relative;
         .mb-dropdown-btn{
             color: #f6e9ea;
@@ -981,6 +984,11 @@ $clr_off_yellow:#FEFCE5;
                 }
             }
         }
+    }
+    .nft-box .nft-tab-content .close-tab {
+        width: 50px;
+        top: -42px;
+        right: 0;
     }
     .nft-box .nft-tab-content .nft-item-wrap .nft-item {
         width: 100%;
@@ -1065,6 +1073,10 @@ $clr_off_yellow:#FEFCE5;
     }
     .timeline ul li:nth-child(2n+1) .roadmap-box {
         width: 385px;
+    }
+    //Gallery Modal
+    #galleryModal .modal-dialog{
+        max-width: 960px;
     }
     //Footer CSS
     .footer-wrap{
@@ -1169,11 +1181,18 @@ $clr_off_yellow:#FEFCE5;
     .timeline ul li:nth-child(2n+1) .roadmap-box {
         width: 470px;
     }
+    //Gallery Modal
+    #galleryModal .modal-dialog{
+        max-width: 1140px;
+    }
 }
 @media only screen and (min-width: 1400px) {
     .container-fluid{
         padding: 0 60px;
      }
+     #galleryModal .modal-dialog{
+        max-width: 1320px;
+    }
      .copyright{
         img{
             max-width: 100px;
@@ -1194,6 +1213,9 @@ $clr_off_yellow:#FEFCE5;
 }
 @media only screen and (min-width:1920px) {
     .container{
+        max-width: 1520px;
+    }
+    #galleryModal .modal-dialog{
         max-width: 1520px;
     }
 }

@@ -1908,7 +1908,13 @@ select {
     color: #fff;
 }
 
-//New CSS
+//Gallery Modal CSS
+#ascrail2001 {
+	background: rgba(255,255,255,0.1);
+}
+// .nicescroll-rails-vr {
+//     display: block!important;
+//  }
 #galleryModal{
     .modal-body{
         padding: 0;
@@ -1917,38 +1923,4 @@ select {
         }
     }
 }
-@media only screen  and (max-width:575px) {
-    #galleryModal .modal-dialog{
-        max-width: 100%;
-    }
-}
-@media only screen  and (min-width:576px) and (max-width:767px) {
-    #galleryModal .modal-dialog{
-        max-width: 540px;
-    }
-}
-@media only screen  and (min-width:768px) and (max-width:991px) {
-    #galleryModal .modal-dialog{
-        max-width: 720px;
-    }
-}
-@media only screen  and (min-width:992px) and (max-width:1199px) {
-    #galleryModal .modal-dialog{
-        max-width: 1140px;
-    }
-}
-@media only screen  and (min-width:1200px) and (max-width:1399px) {
-    #galleryModal .modal-dialog{
-        max-width: 1140px;
-    }
-}
-@media only screen  and (min-width:1400px) {
-    #galleryModal .modal-dialog{
-        max-width: 1320px;
-    }
-}
-@media only screen  and (min-width:1920px) {
-    #galleryModal .modal-dialog{
-        max-width: 1520px;
-    }
-}
+

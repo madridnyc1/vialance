@@ -37,8 +37,7 @@
     padding: 8px 8px;
   }
   .navbar-brand img {
-    height: 50px;
-    max-width: none;
+    max-width: 100px;
   }
   .hero-wrap {
     padding-top: 180px;
@@ -205,6 +204,9 @@
     top: 130%;
     max-width: 400px;
   }
+  #galleryModal .modal-dialog {
+    max-width: 540px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -347,10 +349,6 @@
   .nft-box .nft-tab-content,
   .nft-tab-content .nft-details-wrap {
     padding: 20px 20px;
-  }
-  .nft-box .nft-tab-content .close-tab {
-    top: -42px;
-    right: 20px;
   }
   .nft-box .nft-tab-content .nft-header h2 {
     letter-spacing: 2px;
@@ -513,6 +511,9 @@
     width: 100%;
     margin-right: 0;
   }
+  #galleryModal .modal-dialog {
+    max-width: 720px;
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -662,7 +663,7 @@
     width: 100%;
   }
   .mb-dropdown {
-    width: 80%;
+    width: calc(100% - 50px);
     position: relative;
   }
   .mb-dropdown .mb-dropdown-btn {
@@ -715,6 +716,11 @@
     opacity: 1;
     text-align: left;
     padding-left: 20px;
+  }
+  .nft-box .nft-tab-content .close-tab {
+    width: 50px;
+    top: -42px;
+    right: 0;
   }
   .nft-box .nft-tab-content .nft-item-wrap .nft-item {
     width: 100%;
@@ -797,6 +803,9 @@
   .timeline ul li:nth-child(2n+1) .roadmap-box {
     width: 385px;
   }
+  #galleryModal .modal-dialog {
+    max-width: 960px;
+  }
   .footer-wrap .container-fluid {
     padding: 0 35px;
   }
@@ -878,11 +887,17 @@
   .timeline ul li:nth-child(2n+1) .roadmap-box {
     width: 470px;
   }
+  #galleryModal .modal-dialog {
+    max-width: 1140px;
+  }
 }
 
 @media only screen and (min-width: 1400px) {
   .container-fluid {
     padding: 0 60px;
+  }
+  #galleryModal .modal-dialog {
+    max-width: 1320px;
   }
   .copyright img {
     max-width: 100px;
@@ -904,6 +919,9 @@
 
 @media only screen and (min-width: 1920px) {
   .container {
+    max-width: 1520px;
+  }
+  #galleryModal .modal-dialog {
     max-width: 1520px;
   }
 }
