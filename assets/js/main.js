@@ -19,6 +19,15 @@
      $('.back-to-nft').on('click', function() {
       $('.nft-details-wrap').removeClass('open');
     });
+     //Active Menu Item
+     $('.header-menu.style2 .nav-item .modal-btn').on('click', function() {
+        $(this).addClass('active');
+      });
+    $('.close-tab').on('click', function() {
+        if($('.modal-btn').hasClass('active')){
+            $('.modal-btn').removeClass('active')
+        }
+    });
     //Open Mobile dropdown
     $('.mb-dropdown-btn').on('click', function() {
         $('.nft-tablist').toggleClass('open');

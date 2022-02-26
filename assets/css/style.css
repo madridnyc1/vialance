@@ -535,6 +535,16 @@ select {
   transition: all 0.4s ease-in-out;
 }
 
+.header-menu li a.modal-btn.active {
+  color: #fff;
+}
+
+.header-menu li a.modal-btn.active:after {
+  width: 100%;
+  visibility: visible;
+  opacity: 1;
+}
+
 .header-menu li a:hover {
   color: #fff;
 }
@@ -1622,11 +1632,6 @@ select {
 /*-------------------------------
     NFT Section CSS
 -------------------------------*/
-.nft-wrap {
-  background-image: url(../img/gallery-bg.jpg);
-  padding: 150px 0 100px;
-}
-
 .nft-box {
   background-color: #0D0E0E;
 }
@@ -1697,6 +1702,7 @@ select {
   background-color: transparent;
   border: none;
   padding: 0;
+  z-index: 99;
 }
 
 .nft-box .nft-tab-content .close-tab img {
@@ -2011,5 +2017,55 @@ select {
 
 .header-wrap.sticky .header-menu.style2 li a:hover {
   color: #fff;
+}
+
+#galleryModal .modal-body {
+  padding: 0;
+}
+
+#galleryModal .modal-body .nft-wrap {
+  padding: 0;
+}
+
+@media only screen and (max-width: 575px) {
+  #galleryModal .modal-dialog {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  #galleryModal .modal-dialog {
+    max-width: 540px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #galleryModal .modal-dialog {
+    max-width: 720px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #galleryModal .modal-dialog {
+    max-width: 1140px;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  #galleryModal .modal-dialog {
+    max-width: 1140px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  #galleryModal .modal-dialog {
+    max-width: 1320px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  #galleryModal .modal-dialog {
+    max-width: 1520px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

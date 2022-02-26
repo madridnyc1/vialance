@@ -590,6 +590,16 @@ select {
                 z-index: -1;
                 @include transition(0.4s);
             }
+            &.modal-btn{
+                &.active{
+                    color: $clr_white;
+                    &:after{
+                        width: 100%;
+                        visibility: visible;
+                        opacity: 1;
+                    } 
+                }
+            }
             &:hover{
                 color: $clr_white;
                 &:after{
@@ -1540,12 +1550,11 @@ select {
 /*-------------------------------
     NFT Section CSS
 -------------------------------*/
-.nft-wrap{
-    background-image: url(../img/gallery-bg.jpg);
-    padding: 150px 0 100px;
-}
+// .nft-wrap{
+//     background-image: url(../img/gallery-bg.jpg);
+//     padding: 150px 0 100px;
+// }
 .nft-box{
-    // min-height:600px;
     background-color: #0D0E0E;
     .nft-tablist{
         background-color: #191A1C;
@@ -1606,6 +1615,7 @@ select {
             background-color: transparent;
             border: none;
             padding: 0;
+            z-index: 99;
             img{
                 max-width: 12px;
             }
@@ -1896,4 +1906,49 @@ select {
 }
 .header-wrap.sticky .header-menu.style2 li a:hover{
     color: #fff;
+}
+
+//New CSS
+#galleryModal{
+    .modal-body{
+        padding: 0;
+        .nft-wrap{
+            padding: 0;
+        }
+    }
+}
+@media only screen  and (max-width:575px) {
+    #galleryModal .modal-dialog{
+        max-width: 100%;
+    }
+}
+@media only screen  and (min-width:576px) and (max-width:767px) {
+    #galleryModal .modal-dialog{
+        max-width: 540px;
+    }
+}
+@media only screen  and (min-width:768px) and (max-width:991px) {
+    #galleryModal .modal-dialog{
+        max-width: 720px;
+    }
+}
+@media only screen  and (min-width:992px) and (max-width:1199px) {
+    #galleryModal .modal-dialog{
+        max-width: 1140px;
+    }
+}
+@media only screen  and (min-width:1200px) and (max-width:1399px) {
+    #galleryModal .modal-dialog{
+        max-width: 1140px;
+    }
+}
+@media only screen  and (min-width:1400px) {
+    #galleryModal .modal-dialog{
+        max-width: 1320px;
+    }
+}
+@media only screen  and (min-width:1920px) {
+    #galleryModal .modal-dialog{
+        max-width: 1520px;
+    }
 }
